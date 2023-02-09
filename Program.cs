@@ -1,9 +1,12 @@
 ﻿using NAudio.Wave;
 using NAudio.Lame;
 
-// select directories
-String sourceDirectory = @"C:\Users\fbenn\Music\WAV";
-String targetDirectory = @"C:\Users\fbenn\Music\MP3";
+// select music directory for current user
+String musicFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+String sourceDirectory = musicFolder + @"\WAV";
+String targetDirectory = musicFolder + @"\MP3";
+
+Console.WriteLine(musicFolder);
 
 // search files
 String[] wavFiles = Directory.GetFiles(sourceDirectory, "*.wav");
