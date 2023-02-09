@@ -8,6 +8,13 @@ String targetDirectory = @"C:\Users\fbenn\Music\MP3";
 // search files
 String[] wavFiles = Directory.GetFiles(sourceDirectory, "*.wav");
 
+// end if no files were found
+if (wavFiles.Length == 0)
+{
+    Console.WriteLine("no .WAVs found, exiting...");
+    Environment.Exit(0);
+}
+
 foreach (String wavFile in wavFiles)
 {
     // change extension of wave-file to .mp3
@@ -30,3 +37,4 @@ foreach (String wavFile in wavFiles)
 
 // end message
 Console.WriteLine("Conversion completed"); 
+Environment.Exit(0);
